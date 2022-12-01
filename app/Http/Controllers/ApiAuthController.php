@@ -71,10 +71,20 @@ class ApiAuthController extends Controller
     }
 
     public function profile(): JsonResponse {
+
         return response()->json([
             "success" => true,
-            "message" => "logout successfully",
+            "message" => "user information",
             "user" => Auth::user()
+        ]);
+    }
+
+    public function devices(): JsonResponse {
+
+        return response()->json([
+            "success" => true,
+            "message" => "your devices",
+            "user" => Auth::user()->tokens
         ]);
     }
 
