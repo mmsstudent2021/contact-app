@@ -6,6 +6,7 @@ use App\Models\Contact;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class ContactController extends Controller
 {
@@ -14,9 +15,18 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index():JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $contacts = Contact::paginate(10)->withQueryString();
+        $contacts = Contact::where("user_id", Auth::id())
+            ->when($request->has("keyword"), function ($q) {
+                $q->where(function ($q){
+                    $q->orwhere("name", "like", "%".request('keyword')."%")
+                    ->orwhere("phone", "like", "%".request('keyword')."%")
+                    ->orwhere("email", "like", "%".request('keyword')."%");
+                });
+            })
+            ->paginate(10)->withQueryString();
+
         return response()->json([
             "success" => true,
             "contacts" => $contacts
@@ -26,20 +36,20 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request):JsonResponse
+    public function store(Request $request): JsonResponse
     {
         $request->validate([
-           "name" => "required|min:2|max:20",
+            "name" => "required|min:2|max:20",
             "phone" => "required|numeric",
             "address" => "nullable|max:100",
             "email" => "nullable|email|max:100",
         ]);
 
         $contact = Contact::create([
-           "name" => $request->name,
+            "name" => $request->name,
             "phone" => $request->phone,
             "address" => $request->address,
             "email" => $request->email,
@@ -55,12 +65,21 @@ class ContactController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param \App\Models\Contact $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact):JsonResponse
+    public function show($id): JsonResponse
     {
-        $contacts = Contact::paginate(10);
+        $contact = Contact::find($id);
+
+        if (is_null($contact)) {
+            return response()->json([
+                "success" => false,
+                "message" => "contact not found"
+            ],404);
+        }
+
+        Gate::authorize("view",$contact);
 
         return response()->json([
             "success" => true,
@@ -71,11 +90,11 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Contact  $contact
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Contact $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact) : JsonResponse
+    public function update(Request $request, $id): JsonResponse
     {
         $request->validate([
             "name" => "nullable|min:2|max:20",
@@ -84,19 +103,31 @@ class ContactController extends Controller
             "email" => "nullable|email|max:100",
         ]);
 
-        if($request->has('name')){
+
+        $contact = Contact::find($id);
+
+        if (is_null($contact)) {
+            return response()->json([
+                "success" => false,
+                "message" => "contact not found"
+            ],404);
+        }
+
+        Gate::authorize("update",$contact);
+
+        if ($request->has('name')) {
             $contact->name = $request->name;
         }
 
-        if($request->has('phone')){
+        if ($request->has('phone')) {
             $contact->phone = $request->phone;
         }
 
-        if($request->has('address')){
+        if ($request->has('address')) {
             $contact->address = $request->address;
         }
 
-        if($request->has('email')){
+        if ($request->has('email')) {
             $contact->email = $request->email;
         }
 
@@ -112,11 +143,23 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param \App\Models\Contact $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact) : JsonResponse
+    public function destroy($id): JsonResponse
     {
+
+        $contact = Contact::find($id);
+
+        if (is_null($contact)) {
+            return response()->json([
+                "success" => false,
+                "message" => "contact not found"
+            ],404);
+        }
+
+        Gate::authorize("delete",$contact);
+
         $contact->delete();
 
         return response()->json([
@@ -124,4 +167,5 @@ class ContactController extends Controller
             "message" => "contact deleted"
         ]);
     }
+
 }
