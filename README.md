@@ -109,7 +109,7 @@ Contact api from MMS-IT
 | `password` | `string` | **Required** asdffdsa |
 | `password_confirmation` | `string` | **Required** asdffdsa |
 
-### Change Password
+### Logout
 
 ```http
   POST https://contact-app.mms-it.com/api/v1/user-logout
