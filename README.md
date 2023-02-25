@@ -1,7 +1,7 @@
 
-# Project Title
+# Testing API With Auth
 
-Contact api from MMS-IT
+Contact App API for students from MMS IT
 
 
 ## API Reference
