@@ -84,23 +84,23 @@ Contact App API for students from MMS IT
 
 
 
-### Get Profile
+### Get Profile (GET)
 
 ```http
-  Get https://contact-app.mms-it.com/api/v1/user-profile
+  https://contact-app.mms-it.com/api/v1/user-profile
 ```
 
 
-### Get User devices
+### Get User devices (GET)
 
 ```http
-  GEt https://contact-app.mms-it.com/api/v1/user-devices
+  https://contact-app.mms-it.com/api/v1/user-devices
 ```
 
-### Change Password
+### Change Password (POST)
 
 ```http
-  POST https://contact-app.mms-it.com/api/v1/change-password
+   https://contact-app.mms-it.com/api/v1/change-password
 ```
 
 | Parameter | Type     | Description                |
@@ -109,8 +109,8 @@ Contact App API for students from MMS IT
 | `password` | `string` | **Required** asdffdsa |
 | `password_confirmation` | `string` | **Required** asdffdsa |
 
-### Logout
+### Logout (POST)
 
 ```http
-  POST https://contact-app.mms-it.com/api/v1/user-logout
+   https://contact-app.mms-it.com/api/v1/user-logout
 ```
