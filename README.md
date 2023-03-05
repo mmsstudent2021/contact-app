@@ -6,10 +6,10 @@ Contact App API for students from MMS IT
 
 ## API Reference
 
-#### Login
+#### Login (Post)
 
 ```http
-  Post https://contact-app.mms-it.com/api/v1/login
+  https://contact-app.mms-it.com/api/v1/login
 ```
 
 | Parameter | Type     | Description                |
@@ -18,10 +18,10 @@ Contact App API for students from MMS IT
 | `password` | `string` | **Required** admin123 |
 
 
-#### Register
+#### Register (Post)
 
 ```http
-  Post https://contact-app.mms-it.com/api/v1/register
+  https://contact-app.mms-it.com/api/v1/register
 ```
 
 | Parameter | Type     | Description                |
@@ -34,23 +34,23 @@ Contact App API for students from MMS IT
 
 
 
-### Get Contacts
+### Get Contacts (Get)
 
 ```http
-  Get https://contact-app.mms-it.com/api/v1/contact
+  https://contact-app.mms-it.com/api/v1/contact
 ```
 
 
-### Get Single Contact
+### Get Single Contact (Get)
 
 ```http
-  GEt https://contact-app.mms-it.com/api/v1/contact/{id}
+  https://contact-app.mms-it.com/api/v1/contact/{id}
 ```
 
-### Create Contact
+### Create Contact(POST)
 
 ```http
-  POST https://contact-app.mms-it.com/api/v1/contact
+  https://contact-app.mms-it.com/api/v1/contact
 ```
 
 | Parameter | Type     | Description                |
@@ -60,10 +60,10 @@ Contact App API for students from MMS IT
 | `email` | `string` | **Nullable** post@gmail.com |
 | `address` | `string` | **Nullable** NewYork |
 
-### Update Contact
+### Update Contact(PUT)
 
 ```http
-  Put https://contact-app.mms-it.com/api/v1/contact/{id}
+  https://contact-app.mms-it.com/api/v1/contact/{id}
 ```
   #### You can update with only singe Parameter or more
 | Parameter | Type     | Description                |
@@ -73,10 +73,10 @@ Contact App API for students from MMS IT
 | `email` | `string` | **Nullable** post@gmail.com |
 | `address` | `string` | **Nullable** NewYork |
 
-### Delete Contact
+### Delete Contact (DELETE)
 
 ```http
-  Delete https://contact-app.mms-it.com/api/v1/contact/{id}
+  https://contact-app.mms-it.com/api/v1/contact/{id}
 ```
 
 
