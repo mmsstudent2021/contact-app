@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Contact;
+use App\Models\Billing;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ContactSeeder extends Seeder
+class BillingSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,8 @@ class ContactSeeder extends Seeder
      */
     public function run()
     {
-        Contact::factory(1000)->create();
+        Billing::factory(50)->oneThousand()->create();
+        Billing::factory(50)->threeThousand()->create();
+        Billing::factory(50)->fiveThousand()->create();
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Services\Point\PointCreateService;
 use Illuminate\Http\Request;
 use \Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +12,7 @@ use Illuminate\Testing\Fluent\Concerns\Has;
 
 class ApiAuthController extends Controller
 {
-    public function register(Request $request): JsonResponse
+    public function register(Request $request,PointCreateService $pointCreate): JsonResponse
     {
         $request->validate([
             "name" => "required|min:2|max:50",
@@ -31,9 +32,11 @@ class ApiAuthController extends Controller
            "password" => Hash::make($request->password)
         ]);
 
+        $point = $pointCreate->create($user->id);
         return response()->json([
             "success" => true,
-            "message" => "$user->name is register successful."
+            "message" => "$user->name is register successful.",
+            "points" => $point
         ]);
     }
 

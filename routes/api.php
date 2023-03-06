@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\BillingApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiAuthController;
@@ -32,5 +33,10 @@ Route::prefix("v1")->group(function(){
     });
     Route::middleware(["auth:sanctum"])->group(function(){
        Route::apiResource("/contact",ContactController::class);
+
+       Route::group(['prefix'=>'billing'],function (){
+        Route::get('/',[BillingApiController::class,'index']);
+        Route::post('/generate',[BillingApiController::class,'generate']);
+       });
     });
 });
