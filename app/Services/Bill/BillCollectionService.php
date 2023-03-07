@@ -12,9 +12,7 @@ class BillCollectionService
     public function index($request)
     {
         $limit = $this->checkLimit($request->limit);
-        $bills = Billing::
-        where('used',$request->used)
-        ->where('amount',$request->amount_type)
+        $bills = Billing::index()
         ->latest('id')
         ->paginate($limit)
         ->withQueryString();

@@ -16,7 +16,8 @@ class BillingApiController extends Controller
 {
     public function index(Request $request,BillCollectionService $bill_service)
     {
-        return $bills = $bill_service->index($request);
+        $bills = $bill_service->index($request);
+        return $bills;
     }
 
     public function generate(GenerateRequest $request,BillGenerateService $generate_service)
