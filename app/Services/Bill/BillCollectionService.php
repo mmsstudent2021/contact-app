@@ -14,7 +14,7 @@ class BillCollectionService
         $limit = $this->checkLimit($request->limit);
         $bills = Billing::
         where('used',$request->used)
-        ->where('amount',$request->amount)
+        ->where('amount',$request->amount_type)
         ->latest('id')
         ->paginate($limit)
         ->withQueryString();

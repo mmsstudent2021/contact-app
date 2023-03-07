@@ -9,7 +9,7 @@ class PointCreateService
     public function create($id)
     {
         $point = new Point();
-        $point->amount = 0 ;
+        $point->balance = 0 ;
         $point->user_id = $id;
         $point->save();
 

@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\GenerateTopUp;
 use Illuminate\Foundation\Http\FormRequest;
 
-class GenerateRequest extends FormRequest
+class TopUpRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +24,7 @@ class GenerateRequest extends FormRequest
     public function rules()
     {
         return [
-            'amount_type' => new GenerateTopUp(),
-            'count' => 'required|max:30'
+            'code' => 'required|numeric'
         ];
     }
 }

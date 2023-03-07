@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('code')->limit(6)->unique();
             $table->integer('amount');
+            $table->foreignId('user_id')->nullable()->constrained();
             $table->unsignedInteger('used')->default(0);
             $table->dateTime('filled_at')->nullable();
             $table->timestamps();

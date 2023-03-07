@@ -37,6 +37,8 @@ Route::prefix("v1")->group(function(){
        Route::group(['prefix'=>'billing'],function (){
         Route::get('/',[BillingApiController::class,'index']);
         Route::post('/generate',[BillingApiController::class,'generate']);
+        Route::post('/top-up',[BillingApiController::class,'topUp']);
+
        });
     });
 });
