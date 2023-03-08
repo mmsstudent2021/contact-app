@@ -126,7 +126,7 @@ Contact App API for students from MMS IT
 
 | Parameters | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `amount_type | `integer` | **Required,1000,3000,5000** 3000 |
+| `amount_type` | `integer` | **Required,1000,3000,5000** 3000 |
 | `used` | `integer` | **Required** 0 |
 
 ### Generate(Post)
@@ -136,7 +136,7 @@ Contact App API for students from MMS IT
 
 | Arguments | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `amount_type | `integer` | **Required,1000,3000,5000** 3000 |
+| `amount_type` | `integer` | **Required,1000,3000,5000** 3000 |
 | `count` | `integer` | **Required** **Min** 1  **Max** 30|
 
 ### TopUp(Post)
@@ -146,7 +146,7 @@ Contact App API for students from MMS IT
 
 | Arguments | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `code | `integer` | **Required** 505314 |
+| `code` | `integer` | **Required** 505314 |
 
 
 ## Transactions Point
@@ -158,7 +158,7 @@ Contact App API for students from MMS IT
 
 | Arguments | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `amount | `integer` | **Required** 3000 |
+| `amount` | `integer` | **Required** 3000 |
 | `email` | `integer` | **Required** admin@gmail.com|
 
 ### History (Get)
@@ -168,4 +168,4 @@ Contact App API for students from MMS IT
 
 | Parameters | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `type | `string` | **Required** send Or receive |
+| `type` | `string` | **Required** send Or receive |
