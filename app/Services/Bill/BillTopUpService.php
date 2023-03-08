@@ -76,9 +76,9 @@ class BillTopUpService
         $bill_amount = $bill->amount;
         $user_balance =  $user_point->balance;
 
+        DB::beginTransaction();
         try
         {
-            DB::beginTransaction();
             $added = $this->addTopUp($bill_amount,$user_balance);
 
             $user_point->balance = $added;
