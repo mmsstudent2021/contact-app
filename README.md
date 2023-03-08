@@ -124,7 +124,7 @@ Contact App API for students from MMS IT
    https://contact-app.mms-it.com/api/v1/billing
   ```
 
-| Arguments | Type     | Description                |
+| Parameters | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `amount_type | `integer` | **Required,1000,3000,5000** 3000 |
 | `used` | `integer` | **Required** 0 |
