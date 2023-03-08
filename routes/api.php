@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\BillingApiController;
+use App\Http\Controllers\api\TransferApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiAuthController;
@@ -39,6 +40,11 @@ Route::prefix("v1")->group(function(){
         Route::post('/generate',[BillingApiController::class,'generate']);
         Route::post('/top-up',[BillingApiController::class,'topUp']);
 
+       });
+
+       Route::group(['prefix'=>'transaction'],function (){
+        Route::post('/transfer',[TransferApiController::class,'transfer']);
+        Route::get('/history',[TransferApiController::class,'history']);
        });
     });
 });
