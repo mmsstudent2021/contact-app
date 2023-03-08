@@ -119,7 +119,11 @@ Contact App API for students from MMS IT
 
 ## Billing
 
+
 ### Index(Get)
+``
+Get the List of bills
+``
 ```http
    https://contact-app.mms-it.com/api/v1/billing
   ```
@@ -130,6 +134,9 @@ Contact App API for students from MMS IT
 | `used` | `integer` | **Required** 0 |
 
 ### Generate(Post)
+``
+To generate more billing codes
+``
 ```http
    https://contact-app.mms-it.com/api/v1/billing/generate
   ```
@@ -140,6 +147,9 @@ Contact App API for students from MMS IT
 | `count` | `integer` | **Required** **Min** 1  **Max** 30|
 
 ### TopUp(Post)
+``
+Topup points with bill codes
+``
 ```http
    https://contact-app.mms-it.com/api/v1/billing/top-up
   ```
@@ -152,6 +162,9 @@ Contact App API for students from MMS IT
 ## Transactions Point
 
 ### Transfer (Post)
+``
+Transfer points to user to user
+``
 ```http
    https://contact-app.mms-it.com/api/v1/transaction/transfer
   ```
@@ -162,6 +175,9 @@ Contact App API for students from MMS IT
 | `email` | `integer` | **Required** admin@gmail.com|
 
 ### History (Get)
+``
+Get the history list of transaction
+``
 ```http
    https://contact-app.mms-it.com/api/v1/transaction/history
   ```
