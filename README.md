@@ -12,7 +12,7 @@ Contact App API for students from MMS IT
   https://contact-app.mms-it.com/api/v1/login
 ```
 
-| Parameter | Type     | Description                |
+| Arguments | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `email` | `string` | **Required** admin@gmail.com |
 | `password` | `string` | **Required** admin123 |
@@ -24,7 +24,7 @@ Contact App API for students from MMS IT
   https://contact-app.mms-it.com/api/v1/register
 ```
 
-| Parameter | Type     | Description                |
+| Arguments | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `name` | `string` | **Required** example |
 | `email` | `string` | **Required** example@gmail.com |
@@ -53,7 +53,7 @@ Contact App API for students from MMS IT
   https://contact-app.mms-it.com/api/v1/contact
 ```
 
-| Parameter | Type     | Description                |
+| Arguments | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `name` | `string` | **Required** Post Malone |
 | `phone` | `integer` | **Required** 095146124 |
@@ -66,7 +66,7 @@ Contact App API for students from MMS IT
   https://contact-app.mms-it.com/api/v1/contact/{id}
 ```
   #### You can update with only singe Parameter or more
-| Parameter | Type     | Description                |
+| Arguments | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `name` | `string` | **Required** Post Malone |
 | `phone` | `integer` | **Required** 095146124 |
@@ -103,7 +103,7 @@ Contact App API for students from MMS IT
    https://contact-app.mms-it.com/api/v1/change-password
 ```
 
-| Parameter | Type     | Description                |
+| Arguments | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `current_password` | `string` | **Required** admin123 |
 | `password` | `string` | **Required** asdffdsa |
@@ -115,6 +115,57 @@ Contact App API for students from MMS IT
    https://contact-app.mms-it.com/api/v1/user-logout
 ```
 
-## Points & Billing
+# Points & Billing
 
-### 
+## Billing
+
+### Index(Get)
+```http
+   https://contact-app.mms-it.com/api/v1/billing
+  ```
+
+| Arguments | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `amount_type | `integer` | **Required,1000,3000,5000** 3000 |
+| `used` | `integer` | **Required** 0 |
+
+### Generate(Post)
+```http
+   https://contact-app.mms-it.com/api/v1/billing/generate
+  ```
+
+| Arguments | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `amount_type | `integer` | **Required,1000,3000,5000** 3000 |
+| `count` | `integer` | **Required** **Min** 1  **Max** 30|
+
+### TopUp(Post)
+```http
+   https://contact-app.mms-it.com/api/v1/billing/top-up
+  ```
+
+| Arguments | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `code | `integer` | **Required** 505314 |
+
+
+## Transactions Point
+
+### Transfer (Post)
+```http
+   https://contact-app.mms-it.com/api/v1/transaction/transfer
+  ```
+
+| Arguments | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `amount | `integer` | **Required** 3000 |
+| `email` | `integer` | **Required** admin@gmail.com|
+
+### History (Get)
+```http
+   https://contact-app.mms-it.com/api/v1/transaction/history
+  ```
+
+| Parameters | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `type | `string` | **Required** send Or receive |
