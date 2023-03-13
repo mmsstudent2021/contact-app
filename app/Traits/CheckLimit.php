@@ -4,10 +4,10 @@ namespace App\Traits;
 
 trait CheckLimit
 {
-    public function checkLimit($requestLimit){
+    public function checkLimit($request_limit){
         $limit=null;
-        if($requestLimit){
-            $limit = $requestLimit;
+        if($request_limit){
+            $limit = $request_limit;
         }
         else{
             $limit = 10;
