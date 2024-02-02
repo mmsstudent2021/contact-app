@@ -9,7 +9,7 @@ Contact App API for students from MMS IT
 #### Login (Post)
 
 ```http
-  https://contact-app.mms-it.com/api/v1/login
+  https://contact-app.mmsdev.site/api/v1/login
 ```
 
 | Arguments | Type     | Description                |
@@ -21,7 +21,7 @@ Contact App API for students from MMS IT
 #### Register (Post)
 
 ```http
-  https://contact-app.mms-it.com/api/v1/register
+  https://contact-app.mmsdev.site/api/v1/register
 ```
 
 | Arguments | Type     | Description                |
@@ -37,20 +37,20 @@ Contact App API for students from MMS IT
 ### Get Contacts (Get)
 
 ```http
-  https://contact-app.mms-it.com/api/v1/contact
+  https://contact-app.mmsdev.site/api/v1/contact
 ```
 
 
 ### Get Single Contact (Get)
 
 ```http
-  https://contact-app.mms-it.com/api/v1/contact/{id}
+  https://contact-app.mmsdev.site/api/v1/contact/{id}
 ```
 
 ### Create Contact(POST)
 
 ```http
-  https://contact-app.mms-it.com/api/v1/contact
+  https://contact-app.mmsdev.site/api/v1/contact
 ```
 
 | Arguments | Type     | Description                |
@@ -63,7 +63,7 @@ Contact App API for students from MMS IT
 ### Update Contact(PUT)
 
 ```http
-  https://contact-app.mms-it.com/api/v1/contact/{id}
+  https://contact-app.mmsdev.site/api/v1/contact/{id}
 ```
   #### You can update with only singe Parameter or more
 | Arguments | Type     | Description                |
@@ -76,7 +76,7 @@ Contact App API for students from MMS IT
 ### Delete Contact (DELETE)
 
 ```http
-  https://contact-app.mms-it.com/api/v1/contact/{id}
+  https://contact-app.mmsdev.site/api/v1/contact/{id}
 ```
 
 
@@ -87,20 +87,20 @@ Contact App API for students from MMS IT
 ### Get Profile (GET)
 
 ```http
-  https://contact-app.mms-it.com/api/v1/user-profile
+  https://contact-app.mmsdev.site/api/v1/user-profile
 ```
 
 
 ### Get User devices (GET)
 
 ```http
-  https://contact-app.mms-it.com/api/v1/user-devices
+  https://contact-app.mmsdev.site/api/v1/user-devices
 ```
 
 ### Change Password (POST)
 
 ```http
-   https://contact-app.mms-it.com/api/v1/change-password
+   https://contact-app.mmsdev.site/api/v1/change-password
 ```
 
 | Arguments | Type     | Description                |
@@ -112,7 +112,7 @@ Contact App API for students from MMS IT
 ### Logout (POST)
 
 ```http
-   https://contact-app.mms-it.com/api/v1/user-logout
+   https://contact-app.mmsdev.site/api/v1/user-logout
 ```
 
 # Points & Billing
@@ -125,7 +125,7 @@ Contact App API for students from MMS IT
 Get the List of bills
 ``
 ```http
-   https://contact-app.mms-it.com/api/v1/billing
+   https://contact-app.mmsdev.site/api/v1/billing
   ```
 
 | Parameters | Type     | Description                |
@@ -138,7 +138,7 @@ Get the List of bills
 To generate more billing codes
 ``
 ```http
-   https://contact-app.mms-it.com/api/v1/billing/generate
+   https://contact-app.mmsdev.site/api/v1/billing/generate
   ```
 
 | Arguments | Type     | Description                |
@@ -151,7 +151,7 @@ To generate more billing codes
 Topup points with bill codes
 ``
 ```http
-   https://contact-app.mms-it.com/api/v1/billing/top-up
+   https://contact-app.mmsdev.site/api/v1/billing/top-up
   ```
 
 | Arguments | Type     | Description                |
@@ -166,7 +166,7 @@ Topup points with bill codes
 Transfer points to user to user
 ``
 ```http
-   https://contact-app.mms-it.com/api/v1/transaction/transfer
+   https://contact-app.mmsdev.site/api/v1/transaction/transfer
   ```
 
 | Arguments | Type     | Description                |
@@ -179,7 +179,7 @@ Transfer points to user to user
 Get the history list of transaction
 ``
 ```http
-   https://contact-app.mms-it.com/api/v1/transaction/history
+   https://contact-app.mmsdev.site/api/v1/transaction/history
   ```
 
 | Parameters | Type     | Description                |
