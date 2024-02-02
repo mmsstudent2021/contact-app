@@ -119,7 +119,7 @@ Contact App API for students from MMS IT
 
 ## Billing
 
-
+<!-- 
 ### Index(Get)
 ``
 Get the List of bills
@@ -184,4 +184,4 @@ Get the history list of transaction
 
 | Parameters | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `type` | `string` | **Required** send Or receive |
+| `type` | `string` | **Required** send Or receive | -->
