@@ -115,9 +115,9 @@ Contact App API for students from MMS IT
    https://contact-app.mmsdev.site/api/v1/user-logout
 ```
 
-# Points & Billing
+<!-- # Points & Billing
 
-## Billing
+## Billing -->
 
 <!-- 
 ### Index(Get)
